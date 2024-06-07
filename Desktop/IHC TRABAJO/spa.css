@@ -1,0 +1,227 @@
+/* Estilo de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6A1B9A;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4A148C;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    background-color: #6A1B9A;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Estilos del Home Page */
+.home-container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 60px;
+    background: rgba(106, 27, 154, 0.7);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sidebar nav ul li {
+    width: 100%;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #6A1B9A;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.top-nav ul li {
+    margin-left: 20px;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #6A1B9A;
+    padding: 5px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.salon {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.salon-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.salon-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.salon-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.salon-info h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #6A1B9A;
+}
+
+.salon-info p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.rating {
+    background: #FFD700;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.recommendations-container {
+    position: relative;
+}
+
+.recommendations-wrapper {
+    overflow: hidden;
+}
+
+.recommendations {
+    display: flex;
+    transition: all 0.3s ease-in-out;
+}
+
+.recommendation {
+    min-width: 30%;
+    margin-right: 20px;
+}
+
+.recommendation img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+button.prev-btn, button.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+button.prev-btn {
+    left: 10px;
+}
+
+button.next-btn {
+    right: 10px;
+}
+
+/* Estilo especial para cada página */
+/* Cabello */
+.page-spa .top-nav ul li a[href="spa.html"] {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}

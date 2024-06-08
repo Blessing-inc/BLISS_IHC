@@ -6,7 +6,7 @@ Scenario: Búsqueda por Tipo de Servicio
 
 Given un usuario desea encontrar un servicio de belleza específico en la aplicación,
 When el <usuario> accede a la función de búsqueda y selecciona el <tipo de servicio> que necesita, como corte de cabello o manicura,
-And la aplicación filtra los resultados para mostrar solo los <estilistas> que ofrecen ese tipo de servicio en su área,
+And la aplicación filtra los resultados para mostrar solo los <estilistas> que ofrecen ese tipo de servicio en su respetivoárea,
 Then el <usuario> puede explorar las <opciones disponibles> y seleccionar un estilista para programar una cita.
 
 Examples: Datos de entrada

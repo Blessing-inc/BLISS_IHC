@@ -1,0 +1,416 @@
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6A1B9A;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4A148C;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    background-color: #6A1B9A;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.home-container {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto;
+}
+.sidebar {
+    width: 60px;
+    background: rgba(106, 27, 154, 0.7);
+    height: auto; /* Cambiado a 100vh para asegurar que el sidebar ocupe toda la altura de la ventana */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    width: 100%;
+    background-color: #0a141d;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sidebar nav ul li {
+    width: 100%;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    transition: color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    color: #000;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-left: 80px; /* Aumentar margen izquierdo para compensar la posición fija del sidebar */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #6A1B9A;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 10px; /* Añadido para separar los elementos */
+}
+
+.top-nav ul li {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor del recuadro */
+    transition: background 0.3s, box-shadow 0.3s; /* Efecto de transición */
+    padding: 5px; /* Espaciado interno */
+}
+
+.top-nav ul li:hover {
+    background: #6A1B9A; /* Cambio de fondo al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #6A1B9A;
+    transition: color 0.3s; /* Efecto de transición para el color del texto */
+}
+
+.top-nav ul li:hover a {
+    color: #fff; /* Cambio de color del texto al pasar el cursor */
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.welcome-left {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-left img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.welcome-text {
+    flex-grow: 1;
+}
+
+.welcome-text h2 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    color: #6A1B9A;
+}
+
+.welcome-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recommendation {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.recommendation img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.recommendation .text {
+    flex-grow: 1;
+}
+
+.recommendation h3 {
+    margin: 0 0 10px 0;
+    color: #6A1B9A;
+}
+
+.recommendation .rating {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #FFD700;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.top-rated {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.top-rated h3 {
+    margin: 0 0 10px 0;
+    color: #6A1B9A;
+}
+
+.top-rated ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-rated ul li {
+    padding: 5px 0;
+}
+
+.promotions {
+    display: flex;
+    gap: 20px;
+}
+
+.promotion-item {
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.promotion-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.promotion-item p {
+    margin: 10px 0 0 0;
+}
+
+.page-cabello .top-nav ul li a[href="cabello.html"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.page-unias .top-nav ul li a[href="unias.html"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.page-pestanas .top-nav ul li a[href="pestañas.html"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.page-skin .top-nav ul li a[href="skin.html"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.page-body .top-nav ul li a[href="body.html"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.page-spa .top-nav ul li a[href="spa.html"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.page-depilacion .top-nav ul li a[href="depilacion.html"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+/*:::::Pie de Pagina*/
+.pie-pagina {
+    width: 100%;
+    background-color: rgb(0, 0, 0); /* Morado principal */
+    color: #ffffff; /* Blanco para el texto */
+    text-align: center;
+    padding: 1px 0; /* Ajustar padding para un tamaño adecuado */
+    margin-top: auto; /* Asegura que el footer esté al final */
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 20px 0px; /* Ajustar padding para un tamaño adecuado */
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width:150px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: #ffeded; /* Dorado para los encabezados */
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: #ffffffde; /* Blanco para el texto */
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #ffffff; /* Morado principal */
+    margin-right: 10px;
+    background-color: #575757; /* Dorado para el fondo de los íconos */
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    background-color: #ffffff9a; /* Morado oscuro al pasar el cursor */
+    color: #fff; /* Blanco para el ícono */
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #252121; /* Morado oscuro */
+    padding: 5px 0; /* Ajustar padding para un tamaño adecuado */
+    text-align: center;
+    margin-top: auto;
+    color: #ffffff62; /* Blanco para el texto */
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+@media screen and (max-width:800px) {
+    .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}

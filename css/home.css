@@ -17,14 +17,17 @@
     background: #4A148C;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 button {
@@ -39,17 +42,27 @@ button {
 
 .home-container {
     display: flex;
-    flex-grow: 1;
+    flex: 1 0 auto; /* allow container to grow and push footer down */
     width: 100%;
-    overflow-y: auto;
+    overflow: visible;
 }
 .sidebar {
     width: 60px;
     background: rgba(106, 27, 154, 0.7);
-    height: auto; /* Cambiado a 100vh para asegurar que el sidebar ocupe toda la altura de la ventana */
+    height: auto; /* keep auto so it follows the content height; layout uses flex on .home-container */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.pie-pagina {
+    width: 100%;
+    background-color: rgb(0, 0, 0); /* Morado principal */
+    color: #ffffff; /* Blanco para el texto */
+    text-align: center;
+    padding: 1px 0; /* Ajustar padding para un tamaño adecuado */
+    margin-top: 0;
+    flex-shrink: 0; /* ensure footer does not shrink */
 }
 
 .footer {
@@ -58,9 +71,7 @@ button {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    /* no fixed positioning - keep footer in normal flow */
 }
 
 .sidebar nav ul {
@@ -95,7 +106,7 @@ button {
 }
 
 .main-content {
-    flex-grow: 1;
+    flex: 1 1 auto;
     padding: 20px;
     overflow-y: auto;
     background: rgba(255, 255, 255, 0.8);
@@ -103,7 +114,7 @@ button {
     border-radius: 10px;
     margin: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-left: 80px; /* Aumentar margen izquierdo para compensar la posición fija del sidebar */
+    margin-left: 80px; /* leave margin for sidebar */
 }
 
 header {
@@ -388,6 +399,40 @@ header .logo h1 {
     text-align: center;
     transition: all 300ms ease;
 }
+
+/* Social button styles (modern, accessible) */
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+.social-btn i { font-size: 18px; }
+.social-btn:focus { outline: 3px solid rgba(106,27,154,0.25); outline-offset: 2px; }
+.social-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.16); }
+
+.social-facebook { background: #1877F2; }
+.social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.social-twitter { background: #1DA1F2; }
+.social-youtube { background: #FF0000; }
+
+/* Small design improvements */
+.pie-pagina { padding-top: 18px; padding-bottom: 18px; }
+button { box-shadow: 0 4px 12px rgba(106,27,154,0.15); }
+
+/* Improve top-nav pill contrast and spacing */
+.top-nav ul li { background: rgba(255,255,255,0.9); }
+.top-nav ul li a { color: #6A1B9A; padding: 6px 10px; display: inline-block; }
+.top-nav ul li:hover { background: #6A1B9A; }
+
+/* Ensure focus states for keyboard users on top nav */
+.top-nav a:focus { outline: 3px solid rgba(106,27,154,0.25); outline-offset: 2px; }
 
 .pie-pagina .grupo-1 .red-social a:hover {
     background-color: #ffffff9a; /* Morado oscuro al pasar el cursor */
